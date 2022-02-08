@@ -1,0 +1,29 @@
+{
+  "name": "root-me-api-wrapper",
+  "version": "1.0.0",
+  "description": "A simple API wrapper for the root me api",
+  "main": "src/client.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Antabuse-does-something/root-me-api-wrapper.git"
+  },
+  "keywords": [
+    "root-me",
+    "rootme",
+    "api",
+    "wrapper"
+  ],
+  "author": "Antabuse-does-something",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Antabuse-does-something/root-me-api-wrapper/issues"
+  },
+  "homepage": "https://github.com/Antabuse-does-something/root-me-api-wrapper#readme",
+  "dependencies": {
+    "got": "^12.0.1"
+  }
+}

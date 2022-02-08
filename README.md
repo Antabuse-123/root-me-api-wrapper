@@ -1,2 +1,2 @@
-# root-me-api-wrapper
-A simple root me api
+# root-me-API-wrapper
+A wrapper for the root me API
