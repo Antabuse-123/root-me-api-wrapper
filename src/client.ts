@@ -103,6 +103,7 @@ export class Client {
                         auth_id.push(parseInt(authors[i].id_auteur))
                     }
                     return new Challenge(
+                        id,
                         challenge[0].titre,
                         challenge[0].soustitre,
                         parseInt(challenge[0].score),

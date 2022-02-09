@@ -1,4 +1,5 @@
 export class Challenge {
+    readonly id : number; // The is of the challenge
     readonly title: string; // Name of the challenge
     readonly description: string; // Quick description of the challenge
     readonly points: number; // Points given to the user for solving the challenge
@@ -7,7 +8,8 @@ export class Challenge {
     readonly date : string; // Date of creation of the challenge
     readonly category : string; // Category of the challenge
     readonly difficulty : string; // Difficulty of the challenge
-    public constructor(title : string = "", description : string = "", points : number = -1, authors : string[] = [], date : string = "", category : string = "", difficulty : string = "", authors_id : number[] = []) {
+    public constructor(id : number = -1, title : string = "", description : string = "", points : number = -1, authors : string[] = [], date : string = "", category : string = "", difficulty : string = "", authors_id : number[] = []) {
+        this.id = id;
         this.title = title;
         this.description = description;
         this.points = points;
@@ -18,6 +20,9 @@ export class Challenge {
         this.authors_id = authors_id;
     }
     // GETTERS
+    public getId() : number {
+        return this.id;
+    }
 
     public getTitle() : string {
         return this.title;
