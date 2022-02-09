@@ -9,4 +9,5 @@
 
 ## Issues
 
-Feel free to open an issue if you have any problem.
+* If you find a bug, please open an issue and follow the template
+* If you have a feature request, please open an issue and follow the template
