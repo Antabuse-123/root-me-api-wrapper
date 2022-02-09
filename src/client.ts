@@ -1,5 +1,5 @@
 
-import got from 'got'
+import axios from 'axios';
 import { User } from './types/user.js';
 import { Challenge } from './types/challenge.js';
 
@@ -13,7 +13,7 @@ export class Client {
     }
 
     public async getUser(id : number): Promise<User> {
-        let user = got.get(
+        let user = axios.get(
             `${this.api_url}/auteurs/${id}`,
             {
                 headers : {
@@ -22,11 +22,11 @@ export class Client {
             }
         ).then(
             async (response) =>{
-                if(response.statusCode != 200){
+                if(response.status !== 200){
                     console.log("rate limited")
                     return new User();
                 }
-                let user = JSON.parse(response.body)
+                let user = response.data
                 let solved : Challenge[] = [];
                 if(user.validations !== []){
                     for(let i : number = 0; user.validations[i] !== undefined; i++){
@@ -41,14 +41,14 @@ export class Client {
                         catch (err){
                             console.error(err);
                         }
-                        //await new Promise(f => setTimeout(f, 200));
+                        await new Promise(f => setTimeout(f, 500));
                     }
                 }
                 let created : Challenge[] = []
-                if(user.challenge !== []){
-                    for(let i : number = 0; user.challenge[i] !== undefined; i++){
+                if(user.challenges !== []){
+                    for(let i : number = 0; user.challenges[i] !== undefined; i++){
                         try{
-                            let chall = await this.getChallenge(user.challenge[i].id_challenge);
+                            let chall = await this.getChallenge(user.challenges[i].id_challenge);
                             if(chall === new Challenge()){
                                 console.error("rate limited")
                                 return new User();
@@ -58,7 +58,7 @@ export class Client {
                         catch (err){
                             console.error(err);
                         }
-                        await new Promise(f => setTimeout(f, 200));
+                        await new Promise(f => setTimeout(f, 500));
                     }
                 }    
                 return new User(
@@ -82,7 +82,7 @@ export class Client {
     }
 
     public async getChallenge(id : number) : Promise<Challenge> {
-        let challenge = got.get(
+        let challenge = axios.get(
             `${this.api_url}/challenges/${id}`,
             {
                 headers : {
@@ -91,11 +91,11 @@ export class Client {
             })
             .then(
                 (response) => {
-                    if(response.statusCode != 200){
+                    if(response.status != 200){
                         console.log("error")
                         return new Challenge()
                     }
-                    let challenge = JSON.parse(response.body);
+                    let challenge = response.data;
                     let auth : string[] = [];
                     let auth_id : number[] = [];
                     let authors = challenge[0].auteurs;

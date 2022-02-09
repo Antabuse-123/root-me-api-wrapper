@@ -1,6 +1,3 @@
-import { User } from "./user.js";
-import got from "got"
-
 export class Challenge {
     private title: string;
     private description: string;

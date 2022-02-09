@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "A simple API wrapper for the root me api",
   "main": "src/client.js",
-  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,6 +23,6 @@
   },
   "homepage": "https://github.com/Antabuse-does-something/root-me-api-wrapper#readme",
   "dependencies": {
-    "got": "^12.0.1"
+    "axios": "^0.25.0"
   }
 }
