@@ -4,9 +4,17 @@
 
 This a wrapper for the [root-me](https://root-me.org) API.
 
-Important notes to avoid being rate-limited by the API Gathering the information about a user a really slow process especially if the user has solved a lot of challenges. 
+Important notes to avoid being rate-limited by the API Gathering the information about a user a really slow process especially if the user has solved a lot of challenges.
 
-## Usage :
+## Installation
+
+Simply use npm :
+
+```bash
+npm install root-me-api-wrapper
+```
+
+## Usage
 
 ```javascript
 const { Client } = require("root-me-api-wrapper");
