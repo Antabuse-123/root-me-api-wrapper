@@ -1,7 +1,7 @@
 import {Challenge} from './challenge.js';
 
 export class User{
-    private id: number; // the id of the user
+    readonly id: number; // the id of the user
     private name: string; // the pseudo of the user
     private rank: number; // the ranking of the user
     private title : string; // the title of the user
@@ -16,5 +16,48 @@ export class User{
         this.challenges = challenges;
         this.title = title;
         this.solve = solve;
+    }
+    // GETTERS
+    public getId() : number {
+        return this.id;
+    }
+    public getName() : string {
+        return this.name;
+    }
+    public getRank() : number {
+        return this.rank;
+    }
+    public getTitle() : string {
+        return this.title;
+    }
+    public getSolve() : Challenge[] {
+        return this.solve;
+    }
+    public getScore() : number {
+        return this.score;
+    }
+    public getChallenges() : Challenge[] {
+        return this.challenges;
+    }
+    
+    //SETTERS
+    
+    public setName(name : string) : void {
+        this.name = name;
+    }
+    public setRank(rank : number) : void {
+        this.rank = rank;
+    }
+    public setTitle(title : string) : void {
+        this.title = title;
+    }
+    public setSolve(solve : Challenge[]) : void {
+        this.solve = solve;
+    }
+    public setScore(score : number) : void {
+        this.score = score;
+    }
+    public setChallenges(challenges : Challenge[]) : void {
+        this.challenges = challenges;
     }
 }
