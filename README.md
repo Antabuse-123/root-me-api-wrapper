@@ -4,7 +4,8 @@
 
 This a wrapper for the [root-me](https://root-me.org) API.
 
-Important notes to avoid being rate-limited by the API Gathering the information about a user a really slow process especially if the user has solved a lot of challenges.
+Important notes : 
+* to avoid being rate-limited by the API, gathering information about a user a really slow process especially if the user has solved a lot of challenges.
 
 ## Installation
 
