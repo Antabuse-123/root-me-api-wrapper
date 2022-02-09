@@ -1,4 +1,4 @@
-import {Challenge} from './challenge.js';
+import {Challenge} from './challenge';
 
 export class User{
     readonly id: number; // the id of the user

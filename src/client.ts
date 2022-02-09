@@ -1,7 +1,7 @@
 
 import axios from 'axios';
-import { User } from './types/user.js';
-import { Challenge } from './types/challenge.js';
+import { User } from './types/user';
+import { Challenge } from './types/challenge';
 
 
 export class Client {

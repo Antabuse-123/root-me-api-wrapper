@@ -1,6 +1,6 @@
 {
   "name": "root-me-api-wrapper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple API wrapper for the root me api",
   "main": "src/client.js",
   "scripts": {
