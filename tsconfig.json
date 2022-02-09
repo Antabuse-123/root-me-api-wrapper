@@ -99,6 +99,8 @@
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   },
   "files": [
-    "src/client.ts"
+    "src/client.ts",
+    "src/types/challenge.ts",
+    "src/types/user.ts",
   ]
 }

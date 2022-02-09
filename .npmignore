@@ -1,0 +1,6 @@
+node_modules/
+.github/
+.git/
+.gitignore
+index.js
+package-lock.json
