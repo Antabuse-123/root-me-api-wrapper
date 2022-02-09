@@ -59,3 +59,7 @@ Challenge Object:
 * date : The date of the challenge creation (string)
 * category : The category of the challenge (string)
 * difficulty : The difficulty of the challenge (string)
+
+## To Do
+
+* Write tests
