@@ -41,7 +41,7 @@ export class Client {
                             throw new Error(`${err}`);
                         }
                         // Wait to avoid being rate limited
-                        await new Promise(f => setTimeout(f, 500));
+                        await new Promise(f => setTimeout(f, 200));
                     }
                 }
                 // Gather the list of challenges created by the user
@@ -55,7 +55,7 @@ export class Client {
                         catch (err){
                             throw new Error(`${err}`);
                         }
-                        await new Promise(f => setTimeout(f, 500));
+                        await new Promise(f => setTimeout(f, 200));
                     }
                 }    
                 return new User(
