@@ -26,13 +26,23 @@ const client = new Client(api_key);
 //get the information about a user
 client.getUser(userid).then(user => {
     console.log(user);
-    // The user is retruned as an object
+    // The user variable is an User object
 });
 
 //get the information about a challenge
 client.getChallenge(challengeid).then(challenge => {
     console.log(challenge);
-    // The challenge is retruned as an object
+    // The challenge variable is a Challenge object
+});
+
+client.getUserByName(username).then(users => {
+    console.log(users);
+    // The users variables is an array of tuples [userid, username]
+});
+
+client.getChallengeByName(challengename).then(challenges => {
+    console.log(challenges);
+    // The challenges variable is an array of challenge objects
 });
 ```
 

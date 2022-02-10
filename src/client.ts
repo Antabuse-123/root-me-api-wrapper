@@ -70,7 +70,6 @@ export class Client {
                 
             },
             (err) => {
-                console.error(err);
                 return new User();
             }
         )
@@ -78,6 +77,31 @@ export class Client {
         
     }
 
+    // Returns an array with the name and id of the first 50 user of the request
+    public async getUserByName(name : string): Promise<any[][]> {
+        let users = axios.get(
+            `${this.api_url}/auteurs?nom=${name}`,
+            {
+                headers : {
+                    cookie : `api_key=${this.api_key}`
+                }
+            }
+        ).then(
+            async (response) =>{
+                const resp = response.data[0];
+                let array = [];
+                if(resp === undefined) return [];
+                for(let i : number = 0; resp[i] !== undefined; i++){
+                    array.push([parseInt(resp[i].id_auteur), resp[i].nom])
+                }
+                return array;
+            },
+            (err) => {
+                return [];
+            }
+        )
+        return users;
+    }
 
     // Get a challenges with the given id
     public async getChallenge(id : number) : Promise<Challenge> {
@@ -90,9 +114,6 @@ export class Client {
             })
             .then(
                 (response) => {
-                    if(response.status != 200){
-                        throw new Error("Error while getting the challenge make sure that your api_key is correct");
-                    }
                     let challenge = response.data;
                     let auth : string[] = [];
                     let auth_id : number[] = [];
@@ -116,7 +137,34 @@ export class Client {
                                 
                 },
                 (err) => {
-                    throw new Error(`${err}`);
+                    return new Challenge();
+                }
+            )
+            return challenge;
+    }
+
+    public async getChallengeByName(name : string) : Promise<Challenge[]> {
+        let challenge = axios.get(
+            `${this.api_url}/challenges?titre=${name}`,
+            {
+                headers : {
+                    cookie : `api_key=${this.api_key}`
+                }
+            })
+            .then(
+                async (response) => {
+                    let challenge = response.data[0];
+                    if(challenge === undefined){
+                        return [];
+                    }
+                    let challenges : Challenge[] = []
+                    for(let i : number = 0; challenge[i] !== undefined; i++){
+                        challenges.push(await this.getChallenge(parseInt(challenge[i].id_challenge)));
+                    }
+                    return challenges;   
+                },
+                (err) => {
+                    return [];
                 }
             )
             return challenge;
