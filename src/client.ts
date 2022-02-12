@@ -29,33 +29,17 @@ export class Client {
                 }
                 // the response is automatically converted to a json object
                 let user = response.data
-                let solved : Challenge[] = [];
+                let solved : number[] = [];
                 if(user.validations !== []){
                     for(let i : number = 0; user.validations[i] !== undefined; i++){
-                        try{
-                            // Add the Challenge object to the list of challenges
-                            let chall = await this.getChallenge(user.validations[i].id_challenge);
-                            solved.push(chall)
-                        }
-                        catch (err){
-                            throw new Error(`${err}`);
-                        }
-                        // Wait to avoid being rate limited
-                        await new Promise(f => setTimeout(f, 200));
+                        solved.push(parseInt(user.validations[i].id_challenge));
                     }
                 }
-                // Gather the list of challenges created by the user
-                let created : Challenge[] = []
+                //// Gather the list of challenges created by the user
+                let created : number[] = []
                 if(user.challenges !== []){
                     for(let i : number = 0; user.challenges[i] !== undefined; i++){
-                        try{
-                            let chall = await this.getChallenge(user.challenges[i].id_challenge);
-                            created.push(chall)
-                        }
-                        catch (err){
-                            throw new Error(`${err}`);
-                        }
-                        await new Promise(f => setTimeout(f, 200));
+                        created.push(parseInt(user.challenges[i].id_challenge));
                     }
                 }    
                 return new User(

@@ -1,14 +1,12 @@
-import {Challenge} from './challenge';
-
 export class User{
     readonly id: number; // the id of the user
     private name: string; // the pseudo of the user
     private rank: number; // the ranking of the user
     private title : string; // the title of the user
-    private solve : Challenge[]; // the list of solved challenges
+    private solve : number[]; // the array of the ids of challenges solvedd by the user
     private score: number;  // the number of point from the user
-    private challenges: Challenge[]; // the challenges created by the user
-    public constructor(id : number = -1, name : string = "", rank : number = -1, title : string ="", solve : Challenge[] = [], score :number = -1, challenges  : Challenge[] = []){
+    private challenges: number[]; // the array of the ids of challenges created by the user
+    public constructor(id : number = -1, name : string = "", rank : number = -1, title : string ="", solve : number[] = [], score :number = -1, challenges  : number[] = []){
         this.id = id;
         this.name = name;
         this.rank = rank;
@@ -30,34 +28,13 @@ export class User{
     public getTitle() : string {
         return this.title;
     }
-    public getSolve() : Challenge[] {
+    public getSolve() : number[] {
         return this.solve;
     }
     public getScore() : number {
         return this.score;
     }
-    public getChallenges() : Challenge[] {
+    public getChallenges() : number[] {
         return this.challenges;
-    }
-    
-    //SETTERS
-    
-    public setName(name : string) : void {
-        this.name = name;
-    }
-    public setRank(rank : number) : void {
-        this.rank = rank;
-    }
-    public setTitle(title : string) : void {
-        this.title = title;
-    }
-    public setSolve(solve : Challenge[]) : void {
-        this.solve = solve;
-    }
-    public setScore(score : number) : void {
-        this.score = score;
-    }
-    public setChallenges(challenges : Challenge[]) : void {
-        this.challenges = challenges;
     }
 }

@@ -56,9 +56,9 @@ User Object:
 * name: The pseudo of the user (string)
 * rank: The overall rank of the user (number)
 * score: The number of points the user has (number)
-* solve: An array of challenges the user has solved (array of Challenge Object)
+* solve: The array of the ids of challenges solvedd by the user (array of integers)
 * title: The title of the user (string)
-* challenges: The challenges created by the user (array of Challenge Object)
+* challenges: The array of the ids of challenges created by the user (array of integers)
 
 Challenge Object:
 * id : The challenge id (integer)
