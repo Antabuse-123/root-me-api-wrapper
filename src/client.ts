@@ -72,6 +72,9 @@ export class Client {
             }
         ).then(
             async (response) =>{
+                if(response.status !== 200){
+                    throw new Error("Error while getting the user make sur that your api_key is correct");
+                }
                 const resp = response.data[0];
                 let array = [];
                 if(resp === undefined) return [];
@@ -98,6 +101,9 @@ export class Client {
             })
             .then(
                 (response) => {
+                    if(response.status !== 200){
+                        throw new Error("Error while getting the user make sur that your api_key is correct");
+                    }
                     let challenge = response.data;
                     let auth : string[] = [];
                     let auth_id : number[] = [];
@@ -137,6 +143,9 @@ export class Client {
             })
             .then(
                 async (response) => {
+                    if(response.status !== 200){
+                        throw new Error("Error while getting the user make sur that your api_key is correct");
+                    }
                     let challenge = response.data[0];
                     if(challenge === undefined){
                         return [];
@@ -168,6 +177,9 @@ export class Client {
                 })
                 .then(
                     async (response) => {
+                        if(response.status !== 200){
+                            throw new Error("Error while getting the user make sur that your api_key is correct");
+                        }
                         let challenges = response.data[0];
                         end = response.data.length === 2 && i >0;
                         for(let i : number = 0; challenges[i] !== undefined; i++){
@@ -179,6 +191,7 @@ export class Client {
                     
             )
             i += 50;
+            await new Promise(f => setTimeout(f, 200));
         }
         return challenges_id;
     }
