@@ -4,8 +4,6 @@
 
 This a wrapper for the [root-me](https://root-me.org) API.
 
-Important notes : 
-* to avoid being rate-limited by the API, gathering information about a user a really slow process especially if the user has solved a lot of challenges.
 
 ## Installation
 
@@ -44,6 +42,11 @@ client.getUserByName(username).then(users => {
 client.getChallengeByName(challengename).then(challenges => {
     console.log(challenges);
     // The challenges variable is an array of challenge objects
+});
+
+client.getAllChallenges().then(challenges => {
+    console.log(challenges);
+    // The challenges variable is an array of numbers with the ids of every challenges of Root Me
 });
 ```
 

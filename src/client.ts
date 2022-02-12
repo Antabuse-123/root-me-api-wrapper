@@ -153,4 +153,33 @@ export class Client {
             )
             return challenge;
     }
+
+    public async getAllChallengesId() : Promise<number[]> {
+        let challenges_id : number[] = [];
+        let end : boolean = false;
+        let  i : number = 0;
+        while(!end){
+            challenges_id.concat(await axios.get(
+                `${this.api_url}/challenges/?debut_challenges=${i}`,
+                {
+                    headers : {
+                        cookie : `api_key=${this.api_key}`
+                    }
+                })
+                .then(
+                    async (response) => {
+                        let challenges = response.data[0];
+                        end = response.data.length === 2 && i >0;
+                        for(let i : number = 0; challenges[i] !== undefined; i++){
+                            challenges_id.push(parseInt(challenges[i].id_challenge));
+                        }
+                        
+                        return challenges_id;
+                    })
+                    
+            )
+            i += 50;
+        }
+        return challenges_id;
+    }
 }
