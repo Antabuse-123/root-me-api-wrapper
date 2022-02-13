@@ -7,7 +7,7 @@ This a wrapper for the [root-me](https://root-me.org) API.
 
 ## Installation
 
-Simply use npm[https://www.npmjs.com/package/root-me-api-wrapper] :
+Simply use [npm](https://www.npmjs.com/package/root-me-api-wrapper) :
 
 ```bash
 npm install root-me-api-wrapper
