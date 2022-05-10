@@ -12,8 +12,12 @@ export class Client {
         this.api_url = "https://api.www.root-me.org";
     }
 
-    // Create a User object with his root me ID
-    // Retrun a new user with default values if an error occured
+    /**
+     * Create a User object with his root me ID
+     * @param id The root me id of the user
+     * @returns Promise<User> The user object
+     */
+
     public async getUser(id : number): Promise<User> {
         let user = axios.get(
             `${this.api_url}/auteurs/${id}`,
@@ -61,7 +65,12 @@ export class Client {
         
     }
 
-    // Returns an array with the name and id of the first 50 user of the request
+    /**
+     * fetch a list a user with the given name
+     * @param name the name of the user
+     * @returns Promise<any[][]> an array with the name and id of the first 50 user of the request
+     */
+
     public async getUserByName(name : string): Promise<any[][]> {
         let users = axios.get(
             `${this.api_url}/auteurs?nom=${name}`,
@@ -90,7 +99,12 @@ export class Client {
         return users;
     }
 
-    // Get a challenges with the given id
+    /**
+     * fetch a challenge with the given id
+     * @param id the id of the challenge
+     * @returns Promise<Challenge> the challenge object with the given id
+     */
+
     public async getChallenge(id : number) : Promise<Challenge> {
         let challenge = axios.get(
             `${this.api_url}/challenges/${id}`,
@@ -130,8 +144,14 @@ export class Client {
                     return new Challenge();
                 }
             )
-            return challenge;
+        return challenge;
     }
+
+    /**
+     * fetch a list of challenges with the given name
+     * @param name the name of the challenge
+     * @returns Promise<Challenge[]> an array with the challenge with the given name
+     */
 
     public async getChallengeByName(name : string) : Promise<Challenge[]> {
         let challenge = axios.get(
@@ -162,6 +182,11 @@ export class Client {
             )
             return challenge;
     }
+
+    /**
+     * Get all challenges IDS
+     * @returns Promise<number[]> an array with the id of all the challenges
+     */
 
     public async getAllChallengesId() : Promise<number[]> {
         let challenges_id : number[] = [];
