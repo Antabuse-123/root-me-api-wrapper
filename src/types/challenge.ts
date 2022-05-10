@@ -26,7 +26,7 @@ export class Challenge {
 
     /**
      * get the challenge's id
-     * @returns number
+     * @returns {number}
      */
 
     public getId() : number {
@@ -35,7 +35,7 @@ export class Challenge {
 
     /**
      * get the challenge's title
-     * @returns string
+     * @returns {string}
      */
 
     public getTitle() : string {
@@ -44,7 +44,7 @@ export class Challenge {
 
     /**
      * get the challenge's description
-     * @returns string
+     * @returns {string}
      */
 
     public getDescription() : string {
@@ -53,7 +53,7 @@ export class Challenge {
 
     /**
      * get the challenge's points
-     * @returns number
+     * @returns {number}
      */
 
     public getPoints() : number {
@@ -62,7 +62,7 @@ export class Challenge {
 
     /**
      * get the challenge's authors names
-     * @returns string[]
+     * @returns {string[]}
      */
 
     public getAuthors() : string[] {
@@ -71,7 +71,7 @@ export class Challenge {
 
     /**
      * get the challenge's release date
-     * @returns string
+     * @returns {string}
      */
 
     public getDate() : string {
@@ -80,7 +80,7 @@ export class Challenge {
 
     /**
      * get the challenge's category
-     * @returns string
+     * @returns {string}
      */
 
     public getCategory() : string {
@@ -89,7 +89,7 @@ export class Challenge {
 
     /**
      * ge the challenge's difficulty
-     * @returns string
+     * @returns {string}
      */
 
     public getDifficulty() : string {
@@ -98,7 +98,7 @@ export class Challenge {
 
     /**
      * get the challenge's authors id
-     * @returns number[]
+     * @returns {number[]}
      */
 
     public getAuthorsId() : number[] {

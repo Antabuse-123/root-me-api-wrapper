@@ -22,7 +22,7 @@ export class User{
 
     /**
      * get the user's id
-     * @returns number
+     * @returns {number}
      */
 
     public getId() : number {
@@ -31,7 +31,7 @@ export class User{
 
     /**
      * get the user's name
-     * @returns string
+     * @returns {string}
      */
 
     public getName() : string {
@@ -40,7 +40,7 @@ export class User{
 
     /**
      * get the user's rank
-     * @returns number
+     * @returns {number}
      */
 
     public getRank() : number {
@@ -49,7 +49,7 @@ export class User{
 
     /**
      * get the user's title
-     * @returns string
+     * @returns {string}
      */
 
     public getTitle() : string {
@@ -58,7 +58,7 @@ export class User{
 
     /**
      * get the user's solved challenges id
-     * @returns number[]
+     * @returns {number[]}
      */
 
     public getSolve() : number[] {
@@ -67,7 +67,7 @@ export class User{
 
     /**
      * get the user's score
-     * @returns number
+     * @returns {number}
      */
 
     public getScore() : number {
@@ -76,7 +76,7 @@ export class User{
 
     /**
      * get the user's created challenges id
-     * @returns number[]
+     * @returns {number[]}
      */
 
     public getChallenges() : number[] {

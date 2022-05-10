@@ -14,8 +14,8 @@ export class Client {
 
     /**
      * Create a User object with his root me ID
-     * @param id The root me id of the user
-     * @returns Promise<User> The user object
+     * @param {nuber} id The root me id of the user
+     * @returns {Promise<User>} The user object
      */
 
     public async getUser(id : number): Promise<User> {
@@ -67,8 +67,8 @@ export class Client {
 
     /**
      * fetch a list a user with the given name
-     * @param name the name of the user
-     * @returns Promise<any[][]> an array with the name and id of the first 50 user of the request
+     * @param {string} name the name of the user
+     * @returns {Promise<any[][]>} an array with the name and id of the first 50 user of the request
      */
 
     public async getUserByName(name : string): Promise<any[][]> {
@@ -101,8 +101,8 @@ export class Client {
 
     /**
      * fetch a challenge with the given id
-     * @param id the id of the challenge
-     * @returns Promise<Challenge> the challenge object with the given id
+     * @param {number} id the id of the challenge
+     * @returns {Promise<Challenge>} the challenge object with the given id
      */
 
     public async getChallenge(id : number) : Promise<Challenge> {
@@ -149,8 +149,8 @@ export class Client {
 
     /**
      * fetch a list of challenges with the given name
-     * @param name the name of the challenge
-     * @returns Promise<Challenge[]> an array with the challenge with the given name
+     * @param {string} name the name of the challenge
+     * @returns {Promise<Challenge[]>} an array with the challenge with the given name
      */
 
     public async getChallengeByName(name : string) : Promise<Challenge[]> {
@@ -185,7 +185,7 @@ export class Client {
 
     /**
      * Get all challenges IDS
-     * @returns Promise<number[]> an array with the id of all the challenges
+     * @returns {Promise<number[]>} an array with the id of all the challenges
      */
 
     public async getAllChallengesId() : Promise<number[]> {
